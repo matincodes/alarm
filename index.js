@@ -58,6 +58,7 @@ var countDwn = function(){
 }
 
 countDwn();
+<<<<<<< HEAD
 ****/
 var timer = document.getElementById('timer');
 var hours = document.getElementById('hours');
