@@ -12,6 +12,8 @@
 </head>
 
 <body>
+
+<!--CLOCK-->
     <div id="blur">
         <header>
             <h1>ALARM</h1>
@@ -92,7 +94,7 @@
                 <img id="img" src="icons8-plus.svg" width="50px">
             </div>
         </section>
-
+        <!--timer-->
         <section id="time">
             <div class="timeDiv">
                 <h1 id="timer"></h1>
@@ -111,26 +113,94 @@
 
     </div>
 
-      <!--<i class="far fa-alarm-clock"></i> <i class="fa fa-clock-o"></i> -->
-      <div id="options">
-        <div class="clock__btn">
-            <button class="active__button">
-             <img src="/img/clock.svg" alt="clock" width="40px" height="auto" class = "style">
-            </button> 
-         </div>
-         <div class="alarm__btn">
-            <button class="active__button">
-             <img src="/img/alarm-clock.svg" alt="alarm-clock" width="40px" height="auto">
-            </button> 
-         </div>
-         <div class="timer__btn">
-            <button class="active__button">
-             <img src="/img/timer.svg" alt="timer" width="40px" height="auto">
-            </button> 
-         </div>
-
+    <!--spalsh screen-->
+    <div class="splash">
+       <h1>ALARM CLOCK</h1>
     </div>
-   <audio src="alarm.mp3" id="my_alarm"></audio>
+      
+<!-- STOPWATCH-->
+    <div id="timer2">
+        00:00:00
+    </div>
+    <button id="startpause" onclick="startPause()">start</button>
+    <button onclick="reset()">reset</button>
+    
+    <!--color scheme-->
+    <div>
+        <h1>COLOR SCHEME</h1>
+        <button id="dark">dark mode</button>
+        <button id="magenta">magenta</button>
+        <button id="purple">purple</button>
+    </div>
+
+    <!--javascript-->
+    <script>
+
+        //COLOR SCHEME
+        const darkMode = document.querySelector('#dark');
+        const magenta = document.querySelector('#magenta');
+        const purple = document.querySelector('#purple');
+        const body = document.querySelector('body');
+
+        darkMode.addEventListener('click', ()=>{
+            body.style.background = "rgb(36, 35, 35)";
+        })
+    
+    
+
+        magenta.addEventListener('click', ()=>{
+            body.style.background = "magenta";
+        })
+        purple.addEventListener('click', ()=>{
+            body.style.background = "purple";
+        });
+
+        //STOPWATCH
+        let time  = 0;
+        let running = 0;
+
+        function startPause() {
+            if(running == 0){
+                running = 1;
+                increment();
+                document.querySelector("#startpause").innerHTML = 'pause';
+            }else{
+                running = 0;
+                document.querySelector("startpause").innerHTML = 'resume';
+            }
+        };
+
+        function reset(){
+            running = 0;
+            time = 0;
+            document.querySelector("#timer2").innerHTML = 00 + ":" + 00 + ":" + 00;
+            document.querySelector("#startpause").innerHTML = "start";
+        };
+
+        function increment(){
+            if(running == 1){
+                setTimeout(()=>{
+                    time++;
+                    var mins = Math.floor(time/10/60);
+                    if(mins <= 9){
+                        mins = "0" + mins;
+                    }
+                    var secs = Math.floor(time/10);
+                    if(secs <= 9){
+                        secs = "0" + secs;
+                    }
+                    let tens = Math.floor(time % 10);
+                    if(mins <= 9){
+                        mins = "0" + mins;
+                    }
+                    document.querySelector("#timer2").innerHTML = mins + ":" + secs + ":" + tens;
+                    increment(); 
+                }, 100)
+            };
+        }
+
+    </script>
+   <audio src="landras.mp3" id="my_alarm"></audio>
     <script src="index.js"></script>
 </body>
 

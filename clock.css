@@ -161,6 +161,52 @@ h1{
     font-size: 2.5rem;
 }
 
+.splash{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height:100vh ;
+  z-index: 100;
+  text-align: center;
+  font-family: cursive;
+  transition: all 0.5s ease-in;
+  background: linear-gradient(90deg, rgb(8, 5, 37), #070b2c);
+}
+
+.splash h1{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  font-weight: 600;
+  font-size: 34px;
+  animation-name: fadeIn;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+@keyframes fadeIn{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.splash.none{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height:100vh ;
+  z-index: 100;
+  text-align: center;
+  font-family: cursive;
+  background: linear-gradient(90deg, rgb(8, 5, 37), #070b2c);
+  opacity: 0;
+  transition: all 1s ease-out;
+  visibility: hidden;
+}
+
 
 
 .hand{
@@ -323,7 +369,7 @@ button {
 
 .addbtn{
   position: absolute;
-  bottom: 50px;
+  bottom: 45px;
   left: 50%;
   transform: translateX(-50%);
 }
