@@ -350,6 +350,13 @@ button {
   color: #5e0e53;
 }
 
+.clock_date{
+  font-size: 25px;
+  font-weight: 300;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-bottom: 10px;
+  color: #5e0e53;
+}
 
 @media(max-width: 720px){
 

@@ -80,11 +80,8 @@
 
             </p>
     
-            <p class="clock-text__date">
-                <span class="clock-text__day">Tue</span> -
-                <span class="clock-text__month">Aug</span>
-                <span class="clock-text__day-no">14</span>,
-                <span class="clock-text__year">2020</span>
+            <p class="clock_date">
+              
             </p>
 
             <div id="alarm">
@@ -133,73 +130,7 @@
         <button id="purple">purple</button>
     </div>
 
-    <!--javascript-->
-    <script>
-
-        //COLOR SCHEME
-        const darkMode = document.querySelector('#dark');
-        const magenta = document.querySelector('#magenta');
-        const purple = document.querySelector('#purple');
-        const body = document.querySelector('body');
-
-        darkMode.addEventListener('click', ()=>{
-            body.style.background = "rgb(36, 35, 35)";
-        })
-    
-    
-
-        magenta.addEventListener('click', ()=>{
-            body.style.background = "magenta";
-        })
-        purple.addEventListener('click', ()=>{
-            body.style.background = "purple";
-        });
-
-        //STOPWATCH
-        let time  = 0;
-        let running = 0;
-
-        function startPause() {
-            if(running == 0){
-                running = 1;
-                increment();
-                document.querySelector("#startpause").innerHTML = 'pause';
-            }else{
-                running = 0;
-                document.querySelector("startpause").innerHTML = 'resume';
-            }
-        };
-
-        function reset(){
-            running = 0;
-            time = 0;
-            document.querySelector("#timer2").innerHTML = 00 + ":" + 00 + ":" + 00;
-            document.querySelector("#startpause").innerHTML = "start";
-        };
-
-        function increment(){
-            if(running == 1){
-                setTimeout(()=>{
-                    time++;
-                    var mins = Math.floor(time/10/60);
-                    if(mins <= 9){
-                        mins = "0" + mins;
-                    }
-                    var secs = Math.floor(time/10);
-                    if(secs <= 9){
-                        secs = "0" + secs;
-                    }
-                    let tens = Math.floor(time % 10);
-                    if(mins <= 9){
-                        mins = "0" + mins;
-                    }
-                    document.querySelector("#timer2").innerHTML = mins + ":" + secs + ":" + tens;
-                    increment(); 
-                }, 100)
-            };
-        }
-
-    </script>
+  
    <audio src="landras.mp3" id="my_alarm"></audio>
     <script src="index.js"></script>
 </body>

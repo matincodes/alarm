@@ -106,5 +106,86 @@ setalarm.addEventListener('click', function(){
    }, 2500);
  })
 
+  //COLOR SCHEME
+  const darkMode = document.querySelector('#dark');
+  const magenta = document.querySelector('#magenta');
+  const purple = document.querySelector('#purple');
+  const body = document.querySelector('body');
+
+  darkMode.addEventListener('click', ()=>{
+      body.style.background = "rgb(36, 35, 35)";
+  })
 
 
+
+  magenta.addEventListener('click', ()=>{
+      body.style.background = "magenta";
+  })
+  purple.addEventListener('click', ()=>{
+      body.style.background = "purple";
+  });
+
+  //STOPWATCH
+  let time  = 0;
+  let running = 0;
+
+  function startPause() {
+      if(running == 0){
+          running = 1;
+          increment();
+          document.querySelector("#startpause").innerHTML = 'pause';
+      }else{
+          running = 0;
+          document.querySelector("startpause").innerHTML = 'resume';
+      }
+  };
+
+  function reset(){
+      running = 0;
+      time = 0;
+      document.querySelector("#timer2").innerHTML = 00 + ":" + 00 + ":" + 00;
+      document.querySelector("#startpause").innerHTML = "start";
+  };
+
+  function increment(){
+      if(running == 1){
+          setTimeout(()=>{
+              time++;
+              var mins = Math.floor(time/10/60);
+              if(mins <= 9){
+                  mins = "0" + mins;
+              }
+              var secs = Math.floor(time/10);
+              if(secs <= 9){
+                  secs = "0" + secs;
+              }
+              let tens = Math.floor(time % 10);
+              if(mins <= 9){
+                  mins = "0" + mins;
+              }
+              document.querySelector("#timer2").innerHTML = mins + ":" + secs + ":" + tens;
+              increment(); 
+          }, 100)
+      };
+  }
+
+var date = document.querySelector(".clock_date");
+
+  function renderDate() {
+    var myDate = new Date();
+    var day = myDate.getDay();
+    var year = myDate.getYear();
+      if (year < 1000){
+           year += 1900;
+      }
+    var month  = myDate.getMonth();
+    var daym = myDate.getDate();
+    var dayArray = new Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
+    var monthArray = new Array("January", "February", "March", "April", "May", "June", "July",
+    "August", "September", "October", "November", "December");
+
+    date.textContent = `${dayArray[day]}  ${daym} ${monthArray[month]}, ${year}.`
+  }
+
+
+  renderDate();
