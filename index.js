@@ -58,7 +58,6 @@ var countDwn = function(){
 }
 
 countDwn();
-<<<<<<< HEAD
 ****/
 var timer = document.getElementById('timer');
 var hours = document.getElementById('hours');
@@ -126,3 +125,4 @@ setalarm.addEventListener('click', function(){
           minutes.value = "00";
           seconds.value = "00";
  })
+
