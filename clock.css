@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
 
@@ -292,7 +291,7 @@ button {
 	transform: translate(-50%, -50%);
 	visibility: hidden;
 	opacity: 0;
-	transition: 0.5s;
+	transition:all 0.7s;
 }
 
 #time.active{
@@ -300,7 +299,6 @@ button {
   top: 50%;
   visibility: visible;
   opacity: 1;
-  transition: 0.5s;
 }
 
 #time h1{
