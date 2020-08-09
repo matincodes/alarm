@@ -23,7 +23,9 @@ header{
 }
 
 h1{
-  font-size: 25px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: 500;
+  font-size: 35px;
   font-weight: 700;
   color: rgb(20, 10, 44);
 }
@@ -215,12 +217,12 @@ button {
 }
 
 .clock-text__h2 {
+  font-size: 33px;
+  color: #150533;
+  font-family: cursive;
   margin-bottom: 1rem;
 }
 
-.clock-text__time {
-  margin-bottom: 0.5rem;
-}
 .addbtn{
   position: absolute;
   bottom: 150px;
@@ -260,6 +262,12 @@ button {
 
 }
 
+#time select{
+  padding: 5px;
+  margin: 5px;
+  outline: none;
+}
+
 #setalarm{
   margin: 20px;
   cursor: pointer;
@@ -270,12 +278,38 @@ button {
   color: #fff;
 }
 
+#options{
+  display: none;
+}
+
+#alarm{
+  margin-top: 20px;
+}
+
+.alarm{
+  display: flex;
+  justify-content: flex-start;
+  margin:2px;
+  font-family: cursive;
+  margin-top: 10px;
+  font-size: 25px;
+  color: rgb(92, 88, 88);
+}
+
+#clock_time{
+  font-size: 33px;
+  font-weight: 300;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin-bottom: 10px;
+  color: #5e0e53;
+}
+
 
 @media(max-width: 720px){
 
   #blur{
-    width: 100vw;
-    height: 100vh;
+      width: 100vw;
+      height: 100vh;
       flex-direction: column;
       justify-content: center;
       align-items: center;
@@ -289,7 +323,7 @@ button {
 
 .addbtn{
   position: absolute;
-  bottom: 100px;
+  bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -328,4 +362,8 @@ button {
 .num3 div{
   font-size: 1.5rem;
 }
+
+/* #options{
+  display: block;
+} */
 }

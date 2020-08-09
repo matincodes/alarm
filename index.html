@@ -74,11 +74,8 @@
                 West African Time
             </h2>
     
-            <p class="clock-text__time">
-                <span class="clock-text__hour">3</span> :
-                <span class="clock-text__minutes">20</span> :
-                <span class="clock-text__seconds">20</span>
-                <span class="clock-text__day-zone">pm</span>
+            <p id="clock_time">
+
             </p>
     
             <p class="clock-text__date">
@@ -87,14 +84,13 @@
                 <span class="clock-text__day-no">14</span>,
                 <span class="clock-text__year">2020</span>
             </p>
+
+            <div id="alarm">
+            </div>
     
             <div class="addbtn" id="addbtn">
-                <img id="img" src="icons8-plus.svg">
+                <img id="img" src="icons8-plus.svg" width="50px">
             </div>
-        </section>
-    
-        <section id="alarm">
-            
         </section>
     
         <section id="time">
@@ -113,7 +109,26 @@
             </div>
         </section>
     </div>
-   
+
+      <!--<i class="far fa-alarm-clock"></i> <i class="fa fa-clock-o"></i> -->
+      <div id="options">
+        <div class="clock__btn">
+            <button class="active__button">
+             <img src="/img/clock.svg" alt="clock" width="40px" height="auto" class = "style">
+            </button> 
+         </div>
+         <div class="alarm__btn">
+            <button class="active__button">
+             <img src="/img/alarm-clock.svg" alt="alarm-clock" width="40px" height="auto">
+            </button> 
+         </div>
+         <div class="timer__btn">
+            <button class="active__button">
+             <img src="/img/timer.svg" alt="timer" width="40px" height="auto">
+            </button> 
+         </div>
+    </div>
+   <audio src="alarm.mp3" id="my_alarm"></audio>
     <script src="index.js"></script>
 </body>
 

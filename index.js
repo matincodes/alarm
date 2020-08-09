@@ -23,7 +23,7 @@ btnPlus.addEventListener('click', function(){
   var time = document.getElementById("time");
   time.classList.toggle("active");
 })
-
+/*
 //Timer
 var countDwn = function(){
   timerBtn.addEventListener('click',(e)=>{
@@ -58,3 +58,70 @@ var countDwn = function(){
 }
 
 countDwn();
+****/
+var timer = document.getElementById('timer');
+var hours = document.getElementById('hours');
+var minutes = document.getElementById('minutes');
+var seconds = document.getElementById('seconds');
+var ampm = document.getElementById('ampm');
+var setalarm = document.getElementById('setalarm');
+var div = document.getElementById('alarm');
+var time = document.getElementById('clock_time')
+
+var currentTime;
+var alarmElement;
+var activeAlarm = false;
+var sound = document.getElementById('my_alarm');
+
+
+sound.loop = true;
+
+function showTime(){
+  var now = new Date();
+  currentTime = now.toLocaleTimeString();
+
+  if (currentTime === alarmElement){
+    sound.play();
+  }
+  timer.textContent = currentTime;
+  time.textContent = currentTime;
+  setTimeout(showTime, 1000);
+}
+
+showTime();
+
+function addMinSec(id){
+  var select = id;
+  var min = 59;
+
+  for(var i = 0; i <= min; i++
+    ){
+    select.options[select.options.length] = new Option(i < 10? "0" + i : i);
+  }
+}
+
+function addHours(id){
+  var select = id;
+  var min = 12;
+
+  for(var i = 0; i <= min; i++
+    ){
+    select.options[select.options.length] = new Option(i < 10? "0" + i : i);
+  }
+}
+addHours(hours);
+addMinSec(seconds);
+addMinSec(minutes);
+
+setalarm.addEventListener('click', function(){
+
+          alarmElement = hours.value + ":" + minutes.value + ":" + seconds.value + " " + ampm.value; 
+          var p = document.createElement('p');
+          p.appendChild(document.createTextNode(alarmElement));
+          div.appendChild(p);
+          p.classList.add("alarm");
+
+          hours.value = "00";
+          minutes.value = "00";
+          seconds.value = "00";
+ })
