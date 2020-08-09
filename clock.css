@@ -358,6 +358,37 @@ button {
   color: #5e0e53;
 }
 
+.color{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.color h1{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.color div{
+  display: flex;
+  justify-content: center;
+  flex-direction: row ;
+}
+
+
+.color button{
+  margin: 20px;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(11, 11, 54);
+  color: #fff;
+}
+
+
+
 @media(max-width: 720px){
 
   #blur{
