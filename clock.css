@@ -4,13 +4,17 @@
     box-sizing: border-box;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 
 #blur{
   position: relative;
     font-family: sans-serif;
     width: 100vw;
     height: 100vh;
-    overflow-x: hidden;
+    overflow: hidden;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
