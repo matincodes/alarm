@@ -39,19 +39,19 @@ var timeModal =  document.getElementById('time');
 
 var currentTime;
 var alarmElement;
-var activeAlarm = false;
+var p;
 var sound = document.getElementById('my_alarm');
 
-
-sound.loop = true;
+p = document.createElement('p');
 
 function showTime(){
   var now = new Date();
   currentTime = now.toLocaleTimeString();
 
-  if (currentTime === alarmElement){
+  if (currentTime === p.textContent){
     sound.play();
   }
+  // console.log(alarmElement);
   timer.textContent = currentTime;
   clock.textContent = currentTime;
   setTimeout(showTime, 1000);
@@ -82,12 +82,9 @@ addHours(hours);
 addMinSec(seconds);
 addMinSec(minutes);
 
-var p;
-p = document.createElement('p');
 
 setalarm.addEventListener('click', function(){
           alarmElement = hours.value + ":" + minutes.value + ":" + seconds.value + " " + ampm.value; 
-          p = document.createElement('p');
           p.appendChild(document.createTextNode(alarmElement));
           div.appendChild(p);
           p.classList.add("alarm");
@@ -100,6 +97,7 @@ setalarm.addEventListener('click', function(){
           
  });
 
+/** Splash */
  var splash = document.querySelector(".splash");
 
  document.addEventListener("DOMContentLoaded", (e)=>{
@@ -127,51 +125,11 @@ setalarm.addEventListener('click', function(){
       body.style.background = "purple";
   });
 
-  //STOPWATCH
-  let time  = 0;
-  let running = 0;
 
-  function startPause() {
-      if(running == 0){
-          running = 1;
-          increment();
-          document.querySelector("#startpause").innerHTML = 'pause';
-      }else{
-          running = 0;
-          document.querySelector("startpause").innerHTML = 'resume';
-      }
-  };
+  
+  /**DATE */
 
-  function reset(){
-      running = 0;
-      time = 0;
-      document.querySelector("#timer2").innerHTML = 00 + ":" + 00 + ":" + 00;
-      document.querySelector("#startpause").innerHTML = "start";
-  };
-
-  function increment(){
-      if(running == 1){
-          setTimeout(()=>{
-              time++;
-              var mins = Math.floor(time/10/60);
-              if(mins <= 9){
-                  mins = "0" + mins;
-              }
-              var secs = Math.floor(time/10);
-              if(secs <= 9){
-                  secs = "0" + secs;
-              }
-              let tens = Math.floor(time % 10);
-              if(mins <= 9){
-                  mins = "0" + mins;
-              }
-              document.querySelector("#timer2").innerHTML = mins + ":" + secs + ":" + tens;
-              increment(); 
-          }, 100)
-      };
-  }
-
-var date = document.querySelector(".clock_date");
+var callDate = document.querySelector(".clock_date");
 
   function renderDate() {
     var myDate = new Date();
@@ -186,7 +144,7 @@ var date = document.querySelector(".clock_date");
     var monthArray = new Array("January", "February", "March", "April", "May", "June", "July",
     "August", "September", "October", "November", "December");
 
-    date.textContent = `${dayArray[day]}  ${daym} ${monthArray[month]}, ${year}.`
+    callDate.textContent = `${dayArray[day]}  ${daym} ${monthArray[month]}, ${year}.`
   }
 
 
