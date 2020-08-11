@@ -47,10 +47,10 @@ function showTime(){
   var now = new Date();
   currentTime = now.toLocaleTimeString();
 
-  if (currentTime === p.textContent){
-    sound.play();
-  }
-  // console.log(alarmElement);
+ if ("0" + currentTime === p.textContent) {
+        sound.play();
+ }
+  
   timer.textContent = currentTime;
   clock.textContent = currentTime;
   setTimeout(showTime, 1000);
@@ -84,6 +84,7 @@ addMinSec(minutes);
 
 setalarm.addEventListener('click', function(){
           alarmElement = hours.value + ":" + minutes.value + ":" + seconds.value + " " + ampm.value; 
+          p = document.createElement('p');
           p.appendChild(document.createTextNode(alarmElement));
           div.appendChild(p);
           p.classList.add("alarm");
