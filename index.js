@@ -35,6 +35,7 @@ var ampm = document.getElementById('ampm');
 var setalarm = document.getElementById('setalarm');
 var div = document.getElementById('alarm');
 var clock = document.getElementById('clock_time')
+var timeModal =  document.getElementById('time');
 
 var currentTime;
 var alarmElement;
@@ -92,6 +93,7 @@ setalarm.addEventListener('click', function(){
           minutes.value = "00";
           seconds.value = "00";
 
+         timeModal.classList.remove('active'); //close modal after setting alarm
           
  });
 
